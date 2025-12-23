@@ -3,3 +3,4 @@ package-lock.json
 *.safetensors
 node_modules
 src
+.env

@@ -2,8 +2,9 @@
   "name": "comfyui-serverless",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.ts",
   "scripts": {
+    "fire": "tsx lib/index.ts",
     "build-image:qwen-image-edit-2509-fp8": "docker build --platform linux/amd64 -f ./dockerfile/Dockerfile.qwen-image-edit-2509-fp8 -t vic0627/qwen-image-edit-2509-fp8:latest ."
   },
   "repository": {
@@ -20,7 +21,11 @@
   "homepage": "https://github.com/vic0627/comfyui-serverless#readme",
   "dependencies": {
     "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "tsx": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3"
   }
 }

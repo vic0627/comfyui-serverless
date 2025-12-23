@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/vic0627/comfyui-serverless#readme",
   "dependencies": {
-    "ejs": "^3.1.10"
+    "axios": "^1.13.2",
+    "ejs": "^3.1.10",
+    "tsx": "^4.21.0"
   }
 }

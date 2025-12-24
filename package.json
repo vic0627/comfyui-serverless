@@ -2,10 +2,12 @@
   "name": "comfyui-serverless",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.ts",
+  "main": "index.ts",
   "scripts": {
-    "fire": "tsx lib/index.ts",
-    "build-image:qwen-image-edit-2509-fp8": "docker build --platform linux/amd64 -f ./dockerfile/Dockerfile.qwen-image-edit-2509-fp8 -t vic0627/qwen-image-edit-2509-fp8:0.0.1 ."
+    "qwen:edit": "tsx lib/scripts/edit.ts",
+    "qwen:cancel": "tsx lib/scripts/cancel.ts",
+    "qwen:await": "tsx lib/scripts/await.ts",
+    "qwen:build-image": "docker build --platform linux/amd64 -f ./dockerfile/Dockerfile.qwen-image-edit-2509-fp8 -t vic0627/qwen-image-edit-2509-fp8:0.0.1 ."
   },
   "repository": {
     "type": "git",

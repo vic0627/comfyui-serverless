@@ -1,6 +1,7 @@
 import axios from 'axios'
 import dotenv from 'dotenv'
-import { join } from 'node:path'
+import { mkdir, writeFile } from 'node:fs/promises'
+import { join, resolve } from 'node:path'
 import { ServerlessRes, SuccessData } from '~/index'
 
 dotenv.config()
@@ -10,6 +11,30 @@ const http = axios.create({
   headers: {
     Authorization: 'Bearer ' + process.env['COMFY_ORG_API_KEY'],
   },
+})
+
+const logResponse = async (url: string, res: unknown) => {
+  const logDir = resolve('.log')
+  await mkdir(logDir, { recursive: true })
+  const time = new Date().toISOString()
+  const fileName = time.replace(/[:.]/g, '-') + '.json'
+  const payload = { time, url, res }
+  await writeFile(resolve(logDir, fileName), JSON.stringify(payload, null, 2))
+}
+
+http.interceptors.response.use(async (response) => {
+  const baseURL = response.config.baseURL ?? ''
+  const url = response.config.url ?? 'unknown'
+  let fullUrl = url
+  if (baseURL) {
+    try {
+      fullUrl = new URL(url, baseURL).toString()
+    } catch {
+      fullUrl = `${baseURL}${url}`
+    }
+  }
+  await logResponse(fullUrl, response.data)
+  return response
 })
 
 const ContentTypeJson = {

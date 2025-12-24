@@ -5,7 +5,7 @@ FROM runpod/worker-comfyui:5.5.1-base
 
 # copy models from build context (keep files alongside this Dockerfile)
 RUN mkdir -p /comfyui/models/diffusion_models /comfyui/models/loras /comfyui/models/text_encoders /comfyui/models/vae
-COPY dockerfile/qwen_image_edit_fp8_e4m3fn.safetensors /comfyui/models/diffusion_models/
+COPY dockerfile/qwen_image_edit_2509_fp8_e4m3fn.safetensors /comfyui/models/diffusion_models/
 COPY dockerfile/Qwen-Image-Lightning-4steps-V1.0.safetensors /comfyui/models/loras/
 COPY dockerfile/qwen_2.5_vl_7b_fp8_scaled.safetensors /comfyui/models/text_encoders/
 COPY dockerfile/qwen_image_vae.safetensors /comfyui/models/vae/

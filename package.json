@@ -5,7 +5,7 @@
   "main": "lib/index.ts",
   "scripts": {
     "fire": "tsx lib/index.ts",
-    "build-image:qwen-image-edit-2509-fp8": "docker build --platform linux/amd64 -f ./dockerfile/Dockerfile.qwen-image-edit-2509-fp8 -t vic0627/qwen-image-edit-2509-fp8:latest ."
+    "build-image:qwen-image-edit-2509-fp8": "docker build --platform linux/amd64 -f ./dockerfile/Dockerfile.qwen-image-edit-2509-fp8 -t vic0627/qwen-image-edit-2509-fp8:0.0.1 ."
   },
   "repository": {
     "type": "git",

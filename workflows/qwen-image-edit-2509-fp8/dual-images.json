@@ -52,14 +52,18 @@
             "106",
             0
           ],
-          "image": [
+          "image1": [
             "109",
+            0
+          ],
+          "image2": [
+            "117",
             0
           ]
         },
-        "class_type": "TextEncodeQwenImageEdit",
+        "class_type": "TextEncodeQwenImageEditPlus",
         "_meta": {
-          "title": "TextEncodeQwenImageEdit"
+          "title": "TextEncodeQwenImageEditPlus"
         }
       },
       "108": {
@@ -73,14 +77,18 @@
             "106",
             0
           ],
-          "image": [
+          "image1": [
             "109",
+            0
+          ],
+          "image2": [
+            "117",
             0
           ]
         },
-        "class_type": "TextEncodeQwenImageEdit",
+        "class_type": "TextEncodeQwenImageEditPlus",
         "_meta": {
-          "title": "TextEncodeQwenImageEdit"
+          "title": "TextEncodeQwenImageEditPlus"
         }
       },
       "109": {
@@ -210,6 +218,16 @@
         "class_type": "SaveImage",
         "_meta": {
           "title": "SaveImage"
+        }
+      },
+      "117": {
+        "inputs": {
+          "image": "<%= images[1].name %>",
+          "upload": "image"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
         }
       }
     },

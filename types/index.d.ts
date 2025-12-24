@@ -13,11 +13,16 @@ export type SuccessData = {
   status: Status
 }
 
-export type SingleImageProps = {
-  imageName: string
+export type Image = {
+  name: string
   image: string // base64
+}
+
+export type ImageProps = {
+  images: Image[]
   positivePrompt?: string
   negativePrompt?: string
   steps?: number
   cfg?: number
+  diffusionModel: string
 }

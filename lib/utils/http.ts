@@ -6,7 +6,7 @@ import { ServerlessRes, SuccessData } from '~/index'
 dotenv.config()
 
 const http = axios.create({
-  baseURL: 'https://api.runpod.ai/v2/' + process.env['COMFY_POD_ID'],
+  baseURL: 'https://api.runpod.ai/v2/' + process.env['ENDPOINT_ID'],
   headers: {
     Authorization: 'Bearer ' + process.env['COMFY_ORG_API_KEY'],
   },
